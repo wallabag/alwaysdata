@@ -2,7 +2,7 @@
 
 # site:
 #     type: php
-#     path: '{installation_directory}'
+#     path: '{installation_directory}/web/'
 #     php_version: '7.2'
 # database:
 #     type: mysql
@@ -25,21 +25,6 @@
 #     admin_email:
 #         type: email
 #         label: Administrator email address
-
-cat << EOF > .htaccess
-<Directory $INSTALL_PATH>
-    AllowOverride None
-    Order Allow,Deny
-    Allow from All
-
-    <IfModule mod_rewrite.c>
-        Options -MultiViews
-        RewriteEngine On
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteRule ^(.*)$ app.php [QSA,L]
-    </IfModule>
-</Directory>
-EOF
 
 wget -qO- https://wllbg.org/latest-v2-package | tar -xz --strip-components=1
 
