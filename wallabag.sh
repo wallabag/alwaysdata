@@ -26,7 +26,7 @@
 #         type: email
 #         label: Administrator email address
 
-wget -qO- https://wllbg.org/latest-v2-package | tar -xz --strip-components=1
+wget -qO- https://static.wallabag.org/releases/wallabag-release-2.3.3.tar.gz | tar -xz --strip-components=1
 
 CONFIGURATION_FILE="app/config/parameters.yml"
 sed -i "s|database_host: 127.0.0.1|database_host: $DATABASE_HOST|" $CONFIGURATION_FILE
