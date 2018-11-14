@@ -2,7 +2,7 @@
 
 # site:
 #     type: php
-#     path: '{installation_directory}/web/'
+#     path: '{INSTALL_PATH_RELATIVE}/web/'
 #     php_version: '7.2'
 # database:
 #     type: mysql
